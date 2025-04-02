@@ -366,7 +366,7 @@ def fetch_category_data(parent, data, check=False):
     folder_path.mkdir(parents=True, exist_ok=True)
     
     id_childen_list = []
-    i = 0
+    i = 1
     print("url_key: {}, category: {}".format(data["url_key"], data["id"]))
     while True:
         response = requests.get("https://tiki.vn/api/personalish/v1/blocks/listings?limit=10&page={}&urlKey={}&category={}".format(i, data["url_key"], data["id"]), headers=headers)
