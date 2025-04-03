@@ -1,0 +1,25 @@
+﻿id,customer_id,product_id,rating,title,content,status,thank_count,comment_count,images,seller_id,seller_name,delivery_rating
+10436048,800235,32196874,5,Cực kì hài lòng,"Sách mới keng. Giá khá tốt hơn nhiều nơi khác. 
+Bọc sách cẩn thận, ko hỏng góc. 
+
+Sách mới keng. Giá khá tốt hơn nhiều nơi khác. 
+Bọc sách cẩn thận, ko hỏng góc.",approved,0,0,"[{'id': 2140970, 'full_path': 'https://salt.tikicdn.com/ts/review/f7/88/f7/fe6d03a3f616acaace52d87f763cc172.jpg', 'status': 'approved'}]",53660,Nhà sách Fahasa,[]
+9050710,10065500,32196874,5,Cực kì hài lòng,"Đóng gói sản phẩm khá, thiếu đệm mút, nhưng may mắn sách nguyên vẹn. Sách rất đẹp, trình bày bắt mắt, cứng cáp, thả 5⭐️",approved,0,0,"[{'id': 1816749, 'full_path': 'https://salt.tikicdn.com/ts/review/9c/83/13/25d65cb8d4b05028c3a9fdcfacc6887c.jpg', 'status': 'approved'}]",1,Tiki Trading,[]
+9011774,768339,32196874,5,mua lúc giảm giá,mua lúc giảm giá sáu mươi phần trăm sách đẹp. in màu nên mua tham khảo.,approved,0,0,"[{'id': 1810730, 'full_path': 'https://salt.tikicdn.com/ts/review/b8/ee/6f/e5dcbe2137a648760192dba7a15132df.jpg', 'status': 'approved'}]",1,Tiki Trading,[]
+10729956,652646,32196874,5,Cực kì hài lòng,Sách đóng gói cẩn thận. Nội dung thì đã tham khảo trước nên không có gì để chê.,approved,0,0,[],53660,Nhà sách Fahasa,[]
+9040419,21219689,32196874,5,Cực kì hài lòng,"Sách hay, nội dung phong phú, giải thích dễ hiểu",approved,0,0,"[{'id': 1814660, 'full_path': 'https://salt.tikicdn.com/ts/review/dc/58/1e/02bce93ca1bf4fefe96fdf53f9d932fb.jpg', 'status': 'approved'}]",1,Tiki Trading,[]
+7170101,12517463,32196874,5,Cực kì hài lòng,"Sách rất hay, kiến thức thú vị, gói hàng kĩ, giao hàng nhanh",approved,0,0,"[{'id': 1505251, 'full_path': 'https://salt.tikicdn.com/ts/review/cb/f0/8a/026e823e47b9eb421d07486bc4740449.jpg', 'status': 'approved'}]",1,Tiki Trading,[]
+9319441,354660,32196874,5,Cực kì hài lòng,màu giấy đẹp và giấy chất lượng tốt,approved,0,0,[],1,Tiki Trading,[]
+9766922,6296758,32196874,5,Cực kì hài lòng,Excellent!!,approved,0,0,[],1,Tiki Trading,[]
+10237180,296743,32196874,5,Cực kì hài lòng,,approved,0,0,[],53660,Nhà sách Fahasa,[]
+9869910,10116937,32196874,5,Cực kì hài lòng,,approved,0,0,[],1,Tiki Trading,[]
+3449650,9716988,974721,5,Cực kì hài lòng,"Sách bổ ích và cuốn hút vô cùng. Phong cách viết của bác Dawkins mang chút hài hước và rất sâu sắc. Quyển sách này nhắm tới các bạn thiếu niên muốn tìm hiểu về thế giới xung quanh mình, và giáo sư Richard Dawkins đã thỏa mãn sự tò mò ấy.",approved,2,0,"[{'id': 3396127, 'full_path': 'https://salt.tikicdn.com/ts/review/31/fb/fe/748e19c6ea8dbdd02ca237abf718e8b8.jpg', 'status': 'approved'}, {'id': 3396128, 'full_path': 'https://salt.tikicdn.com/ts/review/2d/12/56/33f2d4a92d827ebc1c3aa5d1fc641c47.jpg', 'status': 'approved'}, {'id': 3396129, 'full_path': 'https://salt.tikicdn.com/ts/review/11/53/89/af5b944fe3cace473377979d017b3109.jpg', 'status': 'approved'}, {'id': 3396130, 'full_path': 'https://salt.tikicdn.com/ts/review/12/28/3c/cb2e803f735e65f9579728784d7722f0.jpg', 'status': 'approved'}, {'id': 3396131, 'full_path': 'https://salt.tikicdn.com/ts/review/8a/d6/f3/02c57d959e3260236513c72f10c92d93.jpg', 'status': 'approved'}]",53660,Nhà sách Fahasa,[]
+19458764,27533076,974721,5,Cực kì hài lòng,"Nội đứng hay, dễ hiểu",approved,0,0,"[{'id': 4270716, 'full_path': 'https://salt.tikicdn.com/ts/review/00/c8/70/836e0a7a30eef9a4cdb78ac243c0b246.jpg', 'status': 'approved'}]",53660,Nhà sách Fahasa,"[{'question': 'Thời gian giao hàng?', 'option': 'Giao đúng hẹn'}, {'question': 'Thái độ của shipper?', 'option': 'Lịch sự'}, {'question': 'Giờ giao hàng?', 'option': 'Có hẹn giờ trước'}, {'question': 'Cách đóng gói sản phẩm?', 'option': 'Cẩn thận'}]"
+9793880,79602,974721,3,Bình thường,"Thủ tục mua hàng nhanh chóng và thuận tiện. Khâu đóng gói hàng khá ẩu, làm quăn bìa sách. Sách bìa mềm, khổ trung bình, chất lượng giấy tạm ổn. Đánh giá này không bao gồm nội dung.",approved,0,0,"[{'id': 1990334, 'full_path': 'https://salt.tikicdn.com/ts/review/ac/71/93/32232f84fd834ed67bf567991de81a8b.jpg', 'status': 'approved'}]",1,Tiki Trading,[]
+11201440,8151903,974721,5,Cực kì hài lòng,,approved,0,0,"[{'id': 2399644, 'full_path': 'https://salt.tikicdn.com/ts/review/a9/fc/2e/a41bac7a5fa522cb330af5742cb919f9.jpg', 'status': 'approved'}]",1,Tiki Trading,[]
+8110967,123699,974721,5,Cực kì hài lòng,"sách đẹp, tốt",approved,0,0,"[{'id': 1650785, 'full_path': 'https://salt.tikicdn.com/ts/review/c0/b5/34/78fa2a705a276fc69e954d036851b5f2.jpg', 'status': 'approved'}]",1,Tiki Trading,[]
+8373213,13011869,974721,5,Cực kì hài lòng,Đọc khá hay,approved,0,0,[],1,Tiki Trading,[]
+8875061,10801450,974721,5,Cực kì hài lòng,,approved,0,0,[],6337,Foreignbooks,[]
+8786381,17002490,974721,5,Cực kì hài lòng,,approved,0,0,[],6337,Foreignbooks,[]
+7776625,11592042,974721,5,Cực kì hài lòng,,approved,0,0,[],1,Tiki Trading,[]
+7726939,6046843,974721,5,Cực kì hài lòng,,approved,0,0,[],6337,Foreignbooks,[]

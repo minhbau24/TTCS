@@ -80,7 +80,7 @@ def normalize_product_data(product):
     soup = BeautifulSoup(e.get("description", "") or "", "html.parser")
 
     # Xử lý danh sách ảnh (tránh lỗi nếu API trả về None)
-    images = e.get("image", [])
+    images = e.get("images", [])
     if not isinstance(images, list):
         images = []
 
@@ -472,3 +472,5 @@ def fetch_and_save_categories(category_name, category_id, output_folder="./data"
     df.to_csv(category_csv_path, index=False)
 
     print(f"Đã lưu file CSV tại: {category_csv_path}")
+
+fetch_and_save_categories("sach-truyen-tieng-viet","316")

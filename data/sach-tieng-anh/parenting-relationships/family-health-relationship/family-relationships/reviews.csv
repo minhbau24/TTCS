@@ -1,0 +1,33 @@
+﻿id,customer_id,product_id,rating,title,content,status,thank_count,comment_count,images,seller_id,seller_name,delivery_rating
+20005293,21574473,10183858,5,Cực kì hài lòng,"Tựa đề thu hút, giao hàng nhanh, đóng gói cẩn thận, sách mơi nhưng trang giây có vẻ mỏng và chữ in có vẻ ko sáng rõ lắm.
+Là quyền sách mình được yêu cầu đọc để trao đổi trong buổi coach nên mình đoán nội dung sẽ thú vị.",approved,0,0,"[{'id': 4382483, 'full_path': 'https://salt.tikicdn.com/ts/review/79/21/2a/0bfdb803e0d8f4896f7a30c3d0406d56.jpg', 'status': 'approved'}]",1231,Xunhasaba Thế giới Sách Ngoại văn,"[{'question': 'Thời gian giao hàng?', 'option': 'Giao đúng hẹn'}, {'question': 'Thái độ của shipper?', 'option': 'Lịch sự'}, {'question': 'Giờ giao hàng?', 'option': 'Có hẹn giờ trước'}, {'question': 'Cách đóng gói sản phẩm?', 'option': 'Cẩn thận'}]"
+20035667,15793423,10183858,5,Cực kì hài lòng,,approved,0,0,[],1231,Xunhasaba Thế giới Sách Ngoại văn,"[{'question': 'Thời gian giao hàng?', 'option': 'Giao đúng hẹn'}, {'question': 'Thái độ của shipper?', 'option': 'Lịch sự'}, {'question': 'Giờ giao hàng?', 'option': 'Có hẹn giờ trước'}, {'question': 'Cách đóng gói sản phẩm?', 'option': 'Cẩn thận'}]"
+19986516,14519342,10183858,5,Cực kì hài lòng,,approved,0,0,[],1231,Xunhasaba Thế giới Sách Ngoại văn,[]
+19667197,8841454,10183858,5,Cực kì hài lòng,Giao nhanh,approved,0,0,[],53660,Nhà sách Fahasa,"[{'question': 'Thời gian giao hàng?', 'option': 'Giao đúng hẹn'}, {'question': 'Thái độ của shipper?', 'option': 'Lịch sự'}, {'question': 'Giờ giao hàng?', 'option': 'Có hẹn giờ trước'}, {'question': 'Cách đóng gói sản phẩm?', 'option': 'Cẩn thận'}]"
+19634143,17221579,10183858,5,Cực kì hài lòng,,approved,0,0,[],53660,Nhà sách Fahasa,[]
+19542919,29444010,10183858,5,Cực kì hài lòng,,approved,0,0,[],53660,Nhà sách Fahasa,"[{'question': 'Thời gian giao hàng?', 'option': 'Giao đúng hẹn'}, {'question': 'Thái độ của shipper?', 'option': 'Lịch sự'}, {'question': 'Giờ giao hàng?', 'option': 'Có hẹn giờ trước'}, {'question': 'Cách đóng gói sản phẩm?', 'option': 'Cẩn thận'}]"
+19286017,28157475,10183858,5,Cực kì hài lòng,,approved,0,0,[],53660,Nhà sách Fahasa,[]
+18540103,1893811,10183858,5,Cực kì hài lòng,,approved,0,0,[],53660,Nhà sách Fahasa,[]
+4306508,11617647,10183858,5,Cực kì hài lòng,"Nếu có nhiều tiền hơn, nên mua bản gốc nước ngoài nhé, quyển này giấy phù hợp giá tiền, nội dung sách khá hay.",approved,0,0,[],53660,Nhà sách Fahasa,[]
+4566841,17554218,10183858,5,Cực kì hài lòng,,approved,0,0,[],1,Tiki Trading,[]
+19654386,8529100,314134,5,Cực kì hài lòng,"Sách gói bọc cẩn thận lắm. 
+Chính hãng.",approved,0,0,[],53660,Nhà sách Fahasa,[]
+5956523,5369607,314134,4,Hài lòng,Sạch thể hiện rõ những xung đột gia đình thường thấy giữa cha mẹ và trẻ em cũng như cách giải quyết tốt nhất làm cho trẻ và cha mẹ ngày một gắn kết.,approved,0,0,"[{'id': 1347780, 'full_path': 'https://salt.tikicdn.com/ts/review/70/b1/ef/a552501f5a8ebbe38b2b7c6e853686a3.jpg', 'status': 'approved'}, {'id': 1347781, 'full_path': 'https://salt.tikicdn.com/ts/review/b8/be/06/d3a7821111b6dfd9fc83080a52676033.jpg', 'status': 'approved'}]",53660,Nhà sách Fahasa,[]
+19325201,25899766,314134,5,Cực kì hài lòng,Đúng sách mới,approved,0,0,[],53660,Nhà sách Fahasa,[]
+19426793,324256,314134,5,Cực kì hài lòng,,approved,0,0,[],53660,Nhà sách Fahasa,[]
+19198503,870434,314134,5,Cực kì hài lòng,,approved,0,0,[],53660,Nhà sách Fahasa,[]
+17851750,13546046,314134,5,Cực kì hài lòng,,approved,0,0,[],53660,Nhà sách Fahasa,[]
+9827891,5223178,314134,4,Hài lòng,"sách hay lắm nha mọi người ơi, nên mua đi về đoci nha các bạn",approved,1,0,"[{'id': 1999101, 'full_path': 'https://salt.tikicdn.com/ts/review/08/42/df/55616c0332e6a42b0760714202a15e1b.jpg', 'status': 'approved'}]",53660,Nhà sách Fahasa,[]
+17288512,9969761,314134,5,Cực kì hài lòng,,approved,0,0,[],53660,Nhà sách Fahasa,[]
+6722228,5494923,314134,5,Cực kì hài lòng,mình mới đọc đc vài trang đầu thấy khá oki. giao hàng siêu nhanh. like cho a shipper,approved,0,1,"[{'id': 1444059, 'full_path': 'https://salt.tikicdn.com/ts/review/5d/39/1d/e23951cdcf7e8a3b26a4fd83899813df.jpg', 'status': 'approved'}]",1,Tiki Trading,[]
+9969063,12565891,314134,5,Cực kì hài lòng,"Cuốn sách quá hay cho tất cả các bậc phụ huynh, tôi sẽ mua tặng đồng nghiệp",approved,0,0,[],53660,Nhà sách Fahasa,[]
+10197054,15358331,314134,5,Cực kì hài lòng,Bọc kĩ càng và giao nhanh,approved,0,0,"[{'id': 2078621, 'full_path': 'https://salt.tikicdn.com/ts/review/5a/c5/98/69b4083d986e25715e7bf77fb5f42aca.jpg', 'status': 'approved'}]",53660,Nhà sách Fahasa,[]
+14416255,21620493,314134,5,Cực kì hài lòng,,approved,0,0,[],53660,Nhà sách Fahasa,[]
+11285975,50463,314134,5,Cực kì hài lòng,Sách hay,approved,0,0,[],53660,Nhà sách Fahasa,[]
+11706505,8113213,314134,5,Cực kì hài lòng,,approved,0,0,[],53660,Nhà sách Fahasa,[]
+10880026,7339673,314134,5,Cực kì hài lòng,,approved,0,0,[],53660,Nhà sách Fahasa,[]
+10522487,87398,314134,5,Cực kì hài lòng,,approved,0,0,[],53660,Nhà sách Fahasa,[]
+9460220,1038777,314134,5,Cực kì hài lòng,,approved,0,0,[],53660,Nhà sách Fahasa,[]
+9203680,5304560,314134,5,Cực kì hài lòng,,approved,0,0,[],53660,Nhà sách Fahasa,[]
+8874941,6037177,314134,5,Cực kì hài lòng,,approved,0,0,[],53660,Nhà sách Fahasa,[]
+8764173,17756665,314134,5,Cực kì hài lòng,,approved,0,0,[],53660,Nhà sách Fahasa,[]
