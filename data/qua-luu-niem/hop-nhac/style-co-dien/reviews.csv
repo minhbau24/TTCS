@@ -1,0 +1,21 @@
+﻿id,customer_id,product_id,rating,title,content,status,thank_count,comment_count,images,seller_id,seller_name,delivery_rating
+20100126,17358489,76001558,4,Hài lòng,,approved,0,0,[],56243,SOTAGO,[]
+16154692,1468687,76001558,1,Rất không hài lòng,"shop ơi, rất buồn, khi mở ra, phần góc của hộp bị gãy. yêu cầu shop đổi mới, vì đây là qua tặng sinh nhật",approved,3,0,"[{'id': 3428022, 'full_path': 'https://salt.tikicdn.com/ts/review/ff/f1/81/7c868938fa3ec28335274e27c4dda533.jpg', 'status': 'approved'}, {'id': 3428023, 'full_path': 'https://salt.tikicdn.com/ts/review/94/e0/e9/7a4b5412a044e4311fc6d56e8a69897f.jpg', 'status': 'approved'}, {'id': 3428024, 'full_path': 'https://salt.tikicdn.com/ts/review/10/5f/f0/e2fd9ea6978cdff88ce42009bbe5e94d.jpg', 'status': 'approved'}]",56243,SOTAGO,[]
+19612710,7884174,76001558,5,Cực kì hài lòng,Đóng hàng rất cẩn thận. Sp đúg như quảng cáo. Nhìn thích lắm,approved,0,1,"[{'id': 4303235, 'full_path': 'https://salt.tikicdn.com/ts/review/61/8e/9b/5d083a3ca1daa394195f77ecebf451e0.jpg', 'status': 'approved'}]",56243,SOTAGO,"[{'question': 'Thời gian giao hàng?', 'option': 'Giao đúng hẹn'}, {'question': 'Thái độ của shipper?', 'option': 'Lịch sự'}, {'question': 'Giờ giao hàng?', 'option': 'Có hẹn giờ trước'}, {'question': 'Cách đóng gói sản phẩm?', 'option': 'Cẩn thận'}]"
+20051844,30235165,76001558,5,Cực kì hài lòng,,approved,0,0,[],56243,SOTAGO,"[{'question': 'Thời gian giao hàng?', 'option': 'Giao đúng hẹn'}, {'question': 'Thái độ của shipper?', 'option': 'Lịch sự'}, {'question': 'Giờ giao hàng?', 'option': 'Có hẹn giờ trước'}, {'question': 'Cách đóng gói sản phẩm?', 'option': 'Cẩn thận'}]"
+17690806,6012215,76001558,5,Cực kì hài lòng,"HÀNG GIAO NHANH, CHẤT LƯỢNG CŨNG ỔN, LÀM QUÀ TẶNG HỢP LÝ",approved,0,1,"[{'id': 3872281, 'full_path': 'https://salt.tikicdn.com/ts/review/63/a7/a6/dfc818880f2940b76b6099f9d1d67309.jpg', 'status': 'approved'}, {'id': 3872282, 'full_path': 'https://salt.tikicdn.com/ts/review/79/d7/49/e73f342261c3d9cad6c1dc4561ca6460.jpg', 'status': 'approved'}]",56243,SOTAGO,[]
+19734328,5384375,76001558,5,Cực kì hài lòng,,approved,0,1,[],56243,SOTAGO,[]
+18984464,1682932,76001558,4,Hài lòng,Ko đẹp như hình ảnh mô tả. Hộp nhựa nhìn rất cheap,approved,0,1,[],56243,SOTAGO,[]
+19570245,14807112,76001558,5,Cực kì hài lòng,,approved,0,1,[],56243,SOTAGO,[]
+17286811,21055940,76001558,4,Hài lòng,Không đẹp như hình minh hoạ nhưng cũng tạm chấp nhận được với mức giá.,approved,0,1,[],56243,SOTAGO,[]
+15235423,1143396,76001558,5,Cực kì hài lòng,,approved,0,1,[],56243,SOTAGO,[]
+15173711,16262550,76001558,5,Cực kì hài lòng,,approved,0,1,[],56243,SOTAGO,[]
+15074826,548694,76001558,5,Cực kì hài lòng,,approved,0,1,[],56243,SOTAGO,[]
+14845384,5987082,76001558,5,Cực kì hài lòng,,approved,0,1,[],56243,SOTAGO,[]
+14084235,8216094,76001558,5,Cực kì hài lòng,Đẹp,approved,0,1,[],56243,SOTAGO,[]
+13354132,10636914,76001558,5,Cực kì hài lòng,,approved,0,1,[],56243,SOHOGO,[]
+13013771,23839891,76001558,5,Cực kì hài lòng,,approved,0,1,[],56243,SOHOGO,[]
+8680745,12722865,76001558,3,Bình thường,Nhạc nhanh qua nghe ko kip luôn. Ngoại hình ok,approved,1,1,[],56243,SOTAGO,[]
+12277145,6547343,76001558,5,Cực kì hài lòng,,approved,0,1,[],56243,SOHOGO,[]
+8999292,12870851,76001558,5,Cực kì hài lòng,,approved,0,1,"[{'id': 1808193, 'full_path': 'https://salt.tikicdn.com/ts/review/ef/6f/a0/ed9d821093c894accaa622def8aacc90.jpg', 'status': 'approved'}]",56243,S and T,[]
+11202150,6477629,76001558,5,Cực kì hài lòng,,approved,0,1,[],56243,SOHOGO,[]
