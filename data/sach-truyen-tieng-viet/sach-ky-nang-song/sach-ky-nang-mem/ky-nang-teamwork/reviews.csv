@@ -1,0 +1,11 @@
+﻿id,customer_id,product_id,rating,title,content,status,thank_count,comment_count,images,seller_id,seller_name,delivery_rating
+20027326,23392789,275320836,5,Cực kì hài lòng,"Đóng gói đẹp, sản phẩm tốt. Tuy nhiên thời gian giao hàng lâu hơn các sàn khác",approved,0,0,[],185035,1980Books Official,[]
+20089662,8984590,275320836,5,Cực kì hài lòng,,approved,0,0,[],185035,1980Books Official,[]
+20083262,10129002,275320836,5,Cực kì hài lòng,,approved,0,0,[],185035,1980Books Official,[]
+20076821,55952,275320836,5,Cực kì hài lòng,,approved,0,0,[],127920,1980 BOOKS HCM,[]
+20061217,21730905,275320836,5,Cực kì hài lòng,,approved,0,0,[],185035,1980Books Official,[]
+20060394,1646920,275320836,5,Cực kì hài lòng,,approved,0,0,[],127920,1980 BOOKS HCM,"[{'question': 'Thời gian giao hàng?', 'option': 'Giao đúng hẹn'}, {'question': 'Thái độ của shipper?', 'option': 'Lịch sự'}, {'question': 'Giờ giao hàng?', 'option': 'Có hẹn giờ trước'}, {'question': 'Cách đóng gói sản phẩm?', 'option': 'Cẩn thận'}]"
+20017742,619134,275320836,5,Cực kì hài lòng,,approved,0,0,[],185035,1980Books Official,"[{'question': 'Thời gian giao hàng?', 'option': 'Giao đúng hẹn'}, {'question': 'Thái độ của shipper?', 'option': 'Lịch sự'}, {'question': 'Giờ giao hàng?', 'option': 'Có hẹn giờ trước'}, {'question': 'Cách đóng gói sản phẩm?', 'option': 'Cẩn thận'}]"
+19983874,6606271,275320836,5,Cực kì hài lòng,,approved,0,0,[],185035,1980Books Official,[]
+19953316,14280194,275320836,4,Hài lòng,,approved,0,0,[],127920,1980 BOOKS HCM,[]
+19943060,1723649,275320836,5,Cực kì hài lòng,,approved,0,0,[],185035,1980Books Official,"[{'question': 'Thời gian giao hàng?', 'option': 'Giao đúng hẹn'}, {'question': 'Thái độ của shipper?', 'option': 'Lịch sự'}, {'question': 'Giờ giao hàng?', 'option': 'Có hẹn giờ trước'}, {'question': 'Cách đóng gói sản phẩm?', 'option': 'Cẩn thận'}]"

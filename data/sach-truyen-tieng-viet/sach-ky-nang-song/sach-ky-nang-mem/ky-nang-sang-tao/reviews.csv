@@ -1,0 +1,11 @@
+﻿id,customer_id,product_id,rating,title,content,status,thank_count,comment_count,images,seller_id,seller_name,delivery_rating
+20031166,29111503,275625159,3,Bình thường,Sao sách của mịn lại không có bookmark vậy ạ? Với cả giao thì đóng gói sơ sài bị rách phần hộp rồi,approved,0,1,"[{'id': 4387852, 'full_path': 'https://salt.tikicdn.com/ts/review/0c/ac/ec/c7ff71cb2966a05ba90061f5fc532932.jpg', 'status': 'approved'}]",1,Tiki Trading,"[{'question': 'Thời gian giao hàng?', 'option': 'Giao đúng hẹn'}, {'question': 'Thái độ của shipper?', 'option': 'Lịch sự'}, {'question': 'Giờ giao hàng?', 'option': 'Có hẹn giờ trước'}, {'question': 'Cách đóng gói sản phẩm?', 'option': 'Cẩu thả'}]"
+20005018,30166536,275625159,5,Cực kì hài lòng,"Xịn nha , bìa xinhhh",approved,0,1,"[{'id': 4382422, 'full_path': 'https://salt.tikicdn.com/ts/review/7f/c1/e6/fa1bbcc35cbe49e384c49b57143b3a3c.jpg', 'status': 'approved'}]",1,Tiki Trading,[]
+20043793,12299893,275625159,5,Cực kì hài lòng,"Sách đẹp, giao hàng tốt",approved,0,1,[],1,Tiki Trading,[]
+20097919,13783365,275625159,5,Cực kì hài lòng,,approved,0,1,[],1,Tiki Trading,[]
+20087088,21905,275625159,5,Cực kì hài lòng,,approved,0,1,[],1,Tiki Trading,[]
+20084760,10650131,275625159,5,Cực kì hài lòng,,approved,0,1,[],1,Tiki Trading,[]
+20058557,5588403,275625159,5,Cực kì hài lòng,,approved,0,1,[],1,Tiki Trading,[]
+20055448,7471885,275625159,5,Cực kì hài lòng,,approved,0,1,[],1,Tiki Trading,[]
+20028973,437067,275625159,5,Cực kì hài lòng,Rất Hay,approved,0,2,[],1,Tiki Trading,[]
+20028212,6310493,275625159,5,Cực kì hài lòng,,approved,0,1,[],1,Tiki Trading,[]
