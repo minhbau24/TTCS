@@ -1,4 +1,4 @@
-data/best_model.pt
+checkpoints/best_model.pt
 data/categories.json
 data/product.csv
 data/test_interactions.csv
