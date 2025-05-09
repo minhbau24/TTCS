@@ -74,7 +74,13 @@ Chạy các lệnh sau để tải mã nguồn:
 - Giải nén và đặt vào thư mục `data/` theo cấu trúc:
 
 ---
-<pre> ```text data/ ├── train/ │ ├── train_interactions.csv │ ├── val_interactions.csv │ └── test_interactions.csv ├── product/ │ ├── product.csv │ └── categories.json ``` </pre>
+```text data/ 
+├── train/ 
+├── train_interactions.csv 
+├── val_interactions.csv 
+├── test_interactions.csv 
+├── product.csv 
+└── categories.json 
 ---
 
 ## 🛠️ Cách sử dụng
