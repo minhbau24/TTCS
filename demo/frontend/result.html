@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kết quả sản phẩm</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Container for the result -->
+    <div class="container py-4">
+        <!-- Loading spinner -->
+        <div id="loading" class="text-center">
+            <div class="spinner-border text-primary" role="status" style="width: 4rem; height: 4rem;">
+                <span class="visually-hidden">Đang tải...</span>
+            </div>
+            <p class="mt-3">Đang xử lý, vui lòng đợi...</p>
+        </div>
+
+        <!-- Display products in a grid -->
+        <h2 id="title" class="text-center mb-4 d-none">Sản phẩm gợi ý cho bạn</h2>
+        <div id="result-container" class="row row-cols-1 row-cols-md-4 g-4 d-none">
+            <!-- Cards will be added here dynamically -->
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", async () => {
+            const selectedProducts = JSON.parse(localStorage.getItem("selectedProducts"));
+            if (!selectedProducts) return;
+
+            try {
+                const response = await fetch("http://localhost:8000/submit-selection", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify(selectedProducts)
+                });
+
+                const data = await response.json();
+                console.log("Dữ liệu nhận được:", data);
+                const list = data.recommendations;
+
+                // Hide loading spinner and show the results container
+                document.getElementById("loading").classList.add("d-none");
+                document.getElementById("title").classList.remove("d-none");
+                const container = document.getElementById("result-container");
+                container.classList.remove("d-none");
+                
+                // Loop through each product and create a card
+                list.forEach(item => {
+                    const col = document.createElement("div");
+                    col.className = "col";
+
+                    col.innerHTML = `
+                        <div class="card h-100 shadow-sm">
+                            <img src="${item.image_url}" class="card-img-top" alt="${item.name}">
+                            <div class="card-body">
+                                <h5 class="card-title">${item.name}</h5>
+                            </div>
+                        </div>
+                    `;
+
+                    container.appendChild(col);
+                });
+                localStorage.removeItem("selectedProducts");
+            } catch (error) {
+                console.error("Lỗi:", error);
+                document.getElementById("loading").innerHTML = "<p class='text-danger'>Lỗi khi tải dữ liệu! Vui lòng thử lại sau.</p>";
+            }
+        });
+    </script>
+
+    <!-- Bootstrap JS (for any dynamic functionality like modals, etc.) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
