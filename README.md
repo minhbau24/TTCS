@@ -37,7 +37,7 @@ Dự án **TTCS** được thiết kế cho:
 - ✅ Thu thập dữ liệu từ Tiki (lịch sử tương tác, thông tin sản phẩm)
 - ✅ Xây dựng và huấn luyện mô hình NCF để gợi ý sản phẩm
 - ✅ Triển khai demo đơn giản với backend FastAPI & frontend Node.js
-- 🚧 Tối ưu mô hình với các đặc trưng bổ sung
+- ✅ Tối ưu mô hình với các đặc trưng bổ sung
 - 🚧 Mở rộng demo để lọc và hiển thị sản phẩm
 
 ---
@@ -48,19 +48,27 @@ Dự án **TTCS** được thiết kế cho:
 
 Chạy các lệnh sau để tải mã nguồn:
 
-- `git clone https://github.com/yourusername/TTCS.git`
-- `cd TTCS`
+```bash
+git clone https://github.com/yourusername/TTCS.git
+cd TTCS
+```
 
 ### 2. Cài đặt thư viện Python
 
-- Cài các thư viện trong `requirements.txt` bằng lệnh:  
-  `pip install -r requirements.txt`
+- Cài các thư viện trong `requirements.txt` bằng lệnh:
+
+```bash
+pip install -r requirements.txt
+```
 
 ### 3. Cài đặt Node.js (cho frontend demo)
 
 - Tải Node.js từ trang chính thức: [https://nodejs.org](https://nodejs.org)
-- Cài thêm `http-server`:  
-  `npm install -g http-server`
+- Cài thêm `http-server`:
+  
+```bash
+npm install -g http-server
+```
 
 ### 4. Thiết bị
 
@@ -80,7 +88,8 @@ Chạy các lệnh sau để tải mã nguồn:
 ├── val_interactions.csv 
 ├── test_interactions.csv 
 ├── product.csv 
-└── categories.json 
+└── categories.json
+```
 ---
 
 ## 🛠️ Cách sử dụng
@@ -94,7 +103,10 @@ Chạy các lệnh sau để tải mã nguồn:
 
 ### 2. Huấn luyện mô hình
 
-- Chạy lệnh: `python main.py`
+- Chạy lệnh:
+```bash
+python main.py
+```
 
 Quá trình này sẽ:
 
@@ -118,19 +130,25 @@ Sau khi huấn luyện, hệ thống sẽ đánh giá mô hình với AUC, HR@10
 #### Khởi động backend (FastAPI)
 
 - Đảm bảo file `checkpoints/best_model.pt` đã tồn tại
-- Chạy lệnh: `uvicorn demo.app:app --reload`
+- Chạy lệnh:
+```bash
+uvicorn demo.app:app --reload
+```
 - Backend sẽ chạy tại: `http://127.0.0.1:8000`
 
 #### Khởi động frontend (Node.js)
 
 - Di chuyển vào thư mục `demo/frontend`
-- Chạy: `http-server`
+- Chạy:
+```bash
+http-server
+```
 - Mở trình duyệt: `http://127.0.0.1:8080`
 
 #### Tương tác demo
 
 - Truy cập `index.html` trong trình duyệt
-- Nhập ID người dùng (ví dụ: `user_123`)
+- Chọn sản phẩm mà bạn quan tâm
 - Kết quả sản phẩm được gợi ý sẽ hiển thị trong `result.html`
 
 ---
