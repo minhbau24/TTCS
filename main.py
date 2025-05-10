@@ -25,13 +25,38 @@ if __name__ == "__main__":
     val_inputs = prepare_inputs(val_df, cust_map, prod_map, feat_dict, seller_dict, cat_indices)
     test_inputs = prepare_inputs(test_df, cust_map, prod_map, feat_dict, seller_dict, cat_indices)
 
+    # Tạo dataset và dataloader
     train_dataset = BookRecDataset(**train_inputs)
     val_dataset = BookRecDataset(**val_inputs)
     test_dataset = BookRecDataset(**test_inputs)
 
-    train_loader = DataLoader(train_dataset, batch_size=1024, shuffle=True, num_workers=4, pin_memory=True)
-    val_loader = DataLoader(val_dataset, batch_size=1024, shuffle=False, num_workers=4, pin_memory=True)
-    test_loader = DataLoader(test_dataset, batch_size=1024, shuffle=False, num_workers=4, pin_memory=True)
+    train_loader = DataLoader(
+        train_dataset,
+        batch_size=4096,
+        shuffle=True,
+        num_workers=2,
+        pin_memory=True,
+        drop_last=True,              
+        persistent_workers=True      
+    )
+
+    val_loader = DataLoader(
+        val_dataset,
+        batch_size=1024,
+        shuffle=False,
+        num_workers=2,
+        pin_memory=True,
+        persistent_workers=True
+    )
+
+    test_loader = DataLoader(
+        test_dataset,
+        batch_size=1024,
+        shuffle=False,
+        num_workers=2,
+        pin_memory=True,
+        persistent_workers=True
+    )
 
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     model = NeuMF(

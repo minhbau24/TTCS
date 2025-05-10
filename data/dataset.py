@@ -81,18 +81,18 @@ def prepare_inputs(df, customer_id_map, product_id_map, product_features_dict, s
     }
 
 class BookRecDataset(Dataset):
-    def __init__(self, customer_idx, product_idx, seller_idx, features, cat_levels, labels, device='cpu'):
-        self.device = device
-        
-        # Chuyển dữ liệu sang tensor và đưa lên GPU ngay từ đầu
-        self.customer_idx = torch.tensor(customer_idx, dtype=torch.long).to(device)
-        self.product_idx = torch.tensor(product_idx, dtype=torch.long).to(device)
-        self.seller_idx = torch.tensor(seller_idx, dtype=torch.long).to(device)
-        self.features = torch.tensor(features, dtype=torch.float32).to(device)
-        self.cat_levels = torch.tensor(cat_levels, dtype=torch.long).to(device)
-        self.labels = torch.tensor(labels, dtype=torch.float32).to(device)
-        
-        self.has_categories = cat_levels.shape[1] > 1 or (cat_levels.shape[1] == 1 and not np.all(cat_levels == 0))
+    def __init__(self, customer_idx, product_idx, seller_idx, features, cat_levels, labels):
+        self.customer_idx = torch.tensor(customer_idx, dtype=torch.long)
+        self.product_idx = torch.tensor(product_idx, dtype=torch.long)
+        self.seller_idx = torch.tensor(seller_idx, dtype=torch.long)
+        self.features = torch.tensor(features, dtype=torch.float32)
+        self.cat_levels = torch.tensor(cat_levels, dtype=torch.long)
+        self.labels = torch.tensor(labels, dtype=torch.float32)
+
+        self.has_categories = self.cat_levels.shape[1] > 1 or (
+            self.cat_levels.shape[1] == 1 and torch.any(self.cat_levels)
+        )
+        self.default_cat = torch.tensor([0], dtype=torch.long)
 
     def __len__(self):
         return len(self.labels)
@@ -105,8 +105,5 @@ class BookRecDataset(Dataset):
             'features': self.features[idx],
             'label': self.labels[idx]
         }
-        if self.has_categories:
-            item['cat_levels'] = self.cat_levels[idx]
-        else:
-            item['cat_levels'] = torch.tensor([0], dtype=torch.long, device=self.device)
+        item['cat_levels'] = self.cat_levels[idx] if self.has_categories else self.default_cat
         return item
