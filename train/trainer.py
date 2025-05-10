@@ -25,37 +25,37 @@ def evaluate_model(epoch, model, data_loader, device, prefix="Val", threshold=0.
             all_customer_ids.extend(customer.cpu().numpy())
     # === AUC ===
     auc = roc_auc_score(all_labels, all_preds)
-    print(f"\n{prefix} AUC: {auc:.4f}")
-    if epoch % 2 == 0 or prefix == "Test":
-        # === HR@k và NDCG@k ===
-        df = pd.DataFrame({
-            'customer_id': all_customer_ids,
-            'prediction': all_preds,
-            'label': all_labels
-        })
+    print(f"{prefix} AUC: {auc:.4f}")
+    # === HR@k và NDCG@k ===
+    df = pd.DataFrame({
+        'customer_id': all_customer_ids,
+        'prediction': all_preds,
+        'label': all_labels
+    })
 
-        df_sorted = df.sort_values(['customer_id', 'prediction'], ascending=[True, False])
-        df_sorted['rank'] = df_sorted.groupby('customer_id').cumcount() + 1
+    df_sorted = df.sort_values(['customer_id', 'prediction'], ascending=[True, False])
+    df_sorted['rank'] = df_sorted.groupby('customer_id').cumcount() + 1
 
-        hr_df = df_sorted[df_sorted['label'] == 1].copy()
-        hr_df['in_top_k'] = hr_df['rank'] <= k
-        hr_at_k = hr_df['in_top_k'].mean()
-        print(f"{prefix} HR@{k}: {hr_at_k:.4f}")
+    hr_df = df_sorted[df_sorted['label'] == 1].copy()
+    hr_df['in_top_k'] = hr_df['rank'] <= k
+    hr_at_k = hr_df['in_top_k'].mean()
+    print(f"{prefix} HR@{k}: {hr_at_k:.4f}")
 
-        ndcg_df = hr_df.copy()
-        ndcg_df['dcg'] = 1 / np.log2(ndcg_df['rank'] + 1)
-        ndcg_df['idcg'] = 1 / np.log2(2)  # IDCG = 1 nếu đúng item ở top-1
-        ndcg_at_k = (ndcg_df['dcg'] / ndcg_df['idcg']).mean()
-        print(f"{prefix} NDCG@{k}: {ndcg_at_k:.4f}")
+    ndcg_df = hr_df.copy()
+    ndcg_df['dcg'] = 1 / np.log2(ndcg_df['rank'] + 1)
+    ndcg_df['idcg'] = 1 / np.log2(2)  # IDCG = 1 nếu đúng item ở top-1
+    ndcg_at_k = (ndcg_df['dcg'] / ndcg_df['idcg']).mean()
+    print(f"{prefix} NDCG@{k}: {ndcg_at_k:.4f}")
 
-        return auc, hr_at_k, ndcg_at_k
-    return auc
+    return auc, hr_at_k, ndcg_at_k
 
 # Hàm huấn luyện
 def train_model(model, train_loader, val_loader, device, epochs=10, patience=3):
     optimizer = torch.optim.Adam(model.parameters(), lr=0.001)
     criterion = nn.BCELoss()
     best_auc = 0
+    best_hr_at_k = 0
+    best_ndcg_at_k = 0
     patience_counter = 0
 
     for epoch in range(epochs):
@@ -81,10 +81,12 @@ def train_model(model, train_loader, val_loader, device, epochs=10, patience=3):
         avg_loss = total_loss / len(train_loader)
         print(f"Epoch {epoch+1}: Train Loss = {avg_loss:.4f}")
 
-        val_auc = evaluate_model(model, val_loader, device, prefix="Val")
+        val_auc, val_hr_at_k, val_ndcg_at_k = evaluate_model(model, val_loader, device, prefix="Val")
 
-        if val_auc > best_auc:
-            best_auc = val_auc
+        if val_auc > best_auc or val_hr_at_k > best_hr_at_k or val_ndcg_at_k > best_ndcg_at_k:
+            best_auc = max(val_auc, best_auc)
+            best_hr_at_k = max(val_hr_at_k, best_hr_at_k)
+            best_ndcg_at_k = max(val_ndcg_at_k, best_ndcg_at_k)
             patience_counter = 0
             torch.save(model.state_dict(), 'best_model.pt')
         else:

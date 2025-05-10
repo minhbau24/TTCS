@@ -35,7 +35,7 @@ if __name__ == "__main__":
         batch_size=4096,
         shuffle=True,
         num_workers=2,
-        pin_memory=True,
+        pin_memory=False,
         drop_last=True,              
         persistent_workers=True      
     )
@@ -45,7 +45,7 @@ if __name__ == "__main__":
         batch_size=1024,
         shuffle=False,
         num_workers=2,
-        pin_memory=True,
+        pin_memory=False,
         persistent_workers=True
     )
 
@@ -54,7 +54,7 @@ if __name__ == "__main__":
         batch_size=1024,
         shuffle=False,
         num_workers=2,
-        pin_memory=True,
+        pin_memory=False,
         persistent_workers=True
     )
 
@@ -66,7 +66,7 @@ if __name__ == "__main__":
         cat_vocab_sizes=cat_vocab_sizes,
         num_features=num_features,
         embed_dim=32,
-        mlp_layers=[64, 32, 16]
+        mlp_layers=[128, 64, 32]
     ).to(device)
 
     train_model(model, train_loader, val_loader, device, epochs=10, patience=3)
