@@ -37,9 +37,10 @@ def create_mappings_and_scaler(full_interactions, product_df):
     valid_cat_columns = [col for col in cat_columns if col in product_df.columns]
     if valid_cat_columns:
         for col in valid_cat_columns:
-            product_df[col] = product_df[col].replace('<PAD>', 'unknown').fillna('unknown')
+            product_df[col] = product_df[col].fillna('unknown')
             unique_vals = product_df[col].unique()
-            cat_maps[col] = {val: idx for idx, val in enumerate(unique_vals)}
+            cat_maps[col] = {'<PAD>': 0}
+            cat_maps[col].update({val: idx + 1 for idx, val in enumerate(unique_vals)})
             product_df[f'{col}_idx'] = product_df[col].map(cat_maps[col])
             cat_indices[col] = product_df.set_index('product_idx')[f'{col}_idx'].to_dict()
     else:
@@ -60,7 +61,7 @@ def prepare_inputs(df, customer_id_map, product_id_map, product_features_dict, s
     customer_indices = df['customer_idx'].values
     product_indices = df['product_idx'].values
     labels = df['is_positive'].values
-    features = np.array([product_features_dict.get(p, [0, 0]) for p in product_indices])
+    features = np.array([product_features_dict.get(p, [0]) for p in product_indices])
     sellers = np.array([seller_idx_dict.get(p, 0) for p in product_indices])
     
     cat_levels = []
