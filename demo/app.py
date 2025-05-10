@@ -9,8 +9,8 @@ import torch
 import torch.nn as nn
 import numpy as np
 from sklearn.preprocessing import StandardScaler
-from TTCS.models.neumf import NeuMF  
-from TTCS.data.dataset import create_mappings_and_scaler
+from models.neumf import NeuMF  
+from data.dataset import create_mappings_and_scaler
 
 app = FastAPI()
 
@@ -46,7 +46,7 @@ def load_products(df, category_name="Sach", category_lv=0):
 
 # Read JSON and create dictionary
 def load_categories():
-    with open("../data/categories.json", "r") as file:
+    with open("./data/categories.json", "r") as file:
         categories = json.load(file)
     return categories
 
@@ -54,9 +54,9 @@ def load_categories():
 try:
     df = pd.read_csv("./data/product.csv")
     full_interactions = pd.concat([
-        pd.read_csv("../data/train_interactions.csv"),
-        pd.read_csv("../data/val_interactions.csv"),
-        pd.read_csv("../data/test_interactions.csv")
+        pd.read_csv("./data/train_interactions.csv"),
+        pd.read_csv("./data/val_interactions.csv"),
+        pd.read_csv("./data/test_interactions.csv")
     ])
     categories = load_categories()
 except FileNotFoundError as e:
@@ -80,7 +80,7 @@ model = NeuMF(
     mlp_layers=[64, 32, 16]
 )
 try:
-    model.load_state_dict(torch.load("./data/best_model.pt", map_location="cpu"))
+    model.load_state_dict(torch.load("./checkpoints/best_model.pt", map_location="cpu"))
 except FileNotFoundError:
     raise Exception("Missing best_model.pt")
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
