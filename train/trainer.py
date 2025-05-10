@@ -5,7 +5,7 @@ import numpy as np
 from tqdm import tqdm
 import pandas as pd
 
-def evaluate_model(epoch, model, data_loader, device, prefix="Val", threshold=0.5, k=10):
+def evaluate_model(model, data_loader, device, prefix="Val", threshold=0.5, k=10):
     model.eval()
     all_preds, all_labels, all_customer_ids = [], [], []
     

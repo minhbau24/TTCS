@@ -40,12 +40,15 @@ def create_mappings_and_scaler(full_interactions, product_df):
             product_df[col] = product_df[col].fillna('unknown')
             unique_vals = product_df[col].unique()
             cat_maps[col] = {'<PAD>': 0}
-            cat_maps[col].update({val: idx + 1 for idx, val in enumerate(unique_vals)})
+            idx = 1
+            for val in unique_vals:
+                if val != '<PAD>':
+                    cat_maps[col].update({val: idx})
+                    idx += 1
             product_df[f'{col}_idx'] = product_df[col].map(cat_maps[col])
             cat_indices[col] = product_df.set_index('product_idx')[f'{col}_idx'].to_dict()
     else:
         print("No valid category columns found. Proceeding without category features.")
-    
     return customer_id_map, product_id_map, product_features_dict, seller_idx_dict, cat_maps, cat_indices
 
 def prepare_inputs(df, customer_id_map, product_id_map, product_features_dict, seller_idx_dict, cat_indices):
