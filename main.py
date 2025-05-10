@@ -6,10 +6,10 @@ from models.neumf import NeuMF
 from train.trainer import train_model, evaluate_model
 
 if __name__ == "__main__":
-    train_df = pd.read_csv("/kaggle/input/dataset/train_interactions.csv")
-    val_df = pd.read_csv("/kaggle/input/dataset/val_interactions.csv")
-    test_df = pd.read_csv("/kaggle/input/dataset/test_interactions.csv")
-    product = pd.read_csv("/kaggle/input/dataset/product.csv", usecols=['id', 'price', 'cat_level_1', 'cat_level_2', 'cat_level_3', 'cat_level_4', 'cat_level_5', 'seller_id'])
+    train_df = pd.read_csv("./data/train_interactions.csv")
+    val_df = pd.read_csv("./data/val_interactions.csv")
+    test_df = pd.read_csv("./data/test_interactions.csv")
+    product = pd.read_csv("./data/product.csv", usecols=['id', 'price', 'cat_level_1', 'cat_level_2', 'cat_level_3', 'cat_level_4', 'cat_level_5', 'seller_id'])
 
     full_interactions = pd.concat([train_df, val_df, test_df])
 
@@ -29,9 +29,9 @@ if __name__ == "__main__":
     val_dataset = BookRecDataset(**val_inputs)
     test_dataset = BookRecDataset(**test_inputs)
 
-    train_loader = DataLoader(train_dataset, batch_size=1024, shuffle=True, num_workers=2, pin_memory=True)
-    val_loader = DataLoader(val_dataset, batch_size=1024, shuffle=False, num_workers=2, pin_memory=True)
-    test_loader = DataLoader(test_dataset, batch_size=1024, shuffle=False, num_workers=2, pin_memory=True)
+    train_loader = DataLoader(train_dataset, batch_size=1024, shuffle=True, num_workers=4, pin_memory=True)
+    val_loader = DataLoader(val_dataset, batch_size=1024, shuffle=False, num_workers=4, pin_memory=True)
+    test_loader = DataLoader(test_dataset, batch_size=1024, shuffle=False, num_workers=4, pin_memory=True)
 
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     model = NeuMF(
