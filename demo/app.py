@@ -77,7 +77,7 @@ model = NeuMF(
     cat_vocab_sizes=cat_vocab_sizes,
     num_features=num_features,
     embed_dim=32,
-    mlp_layers=[64, 32, 16]
+    mlp_layers=[128, 64, 32]
 )
 try:
     model.load_state_dict(torch.load("./checkpoints/best_model.pt", map_location="cpu"))

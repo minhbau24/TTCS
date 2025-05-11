@@ -65,7 +65,7 @@ pip install -r requirements.txt
 
 - Tải Node.js từ trang chính thức: [https://nodejs.org](https://nodejs.org)
 - Cài thêm `http-server`:
-  
+
 ```bash
 npm install -g http-server
 ```
@@ -78,18 +78,20 @@ npm install -g http-server
 
 ### 5. Tải dữ liệu
 
-- Tải dữ liệu từ Google Drive (link riêng)
+- Tải dữ liệu từ Google Drive: https://drive.google.com/drive/folders/1dBywhYWkEB-LVmN9XbPXDSiLU6Z4Xs_P
 - Giải nén và đặt vào thư mục `data/` theo cấu trúc:
 
 ---
-```text data/ 
-├── train/ 
-├── train_interactions.csv 
-├── val_interactions.csv 
-├── test_interactions.csv 
-├── product.csv 
+
+```text data/
+├── train/
+├── train_interactions.csv
+├── val_interactions.csv
+├── test_interactions.csv
+├── product.csv
 └── categories.json
 ```
+
 ---
 
 ## 🛠️ Cách sử dụng
@@ -104,6 +106,7 @@ npm install -g http-server
 ### 2. Huấn luyện mô hình
 
 - Chạy lệnh:
+
 ```bash
 python main.py
 ```
@@ -131,18 +134,22 @@ Sau khi huấn luyện, hệ thống sẽ đánh giá mô hình với AUC, HR@10
 
 - Đảm bảo file `checkpoints/best_model.pt` đã tồn tại
 - Chạy lệnh:
+
 ```bash
 uvicorn demo.app:app --reload
 ```
+
 - Backend sẽ chạy tại: `http://127.0.0.1:8000`
 
 #### Khởi động frontend (Node.js)
 
 - Di chuyển vào thư mục `demo/frontend`
 - Chạy:
+
 ```bash
 http-server
 ```
+
 - Mở trình duyệt: `http://127.0.0.1:8080`
 
 #### Tương tác demo

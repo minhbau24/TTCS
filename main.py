@@ -39,7 +39,8 @@ if __name__ == "__main__":
         shuffle=True,
         num_workers=6,
         pin_memory=False,
-        drop_last=True,              
+        drop_last=True,        
+        prefetch_factor=2,      
         persistent_workers=True      
     )
 
@@ -49,6 +50,7 @@ if __name__ == "__main__":
         shuffle=False,
         num_workers=4,
         pin_memory=False,
+        prefetch_factor=2,
         persistent_workers=True
     )
 
@@ -58,6 +60,7 @@ if __name__ == "__main__":
         shuffle=False,
         num_workers=4,
         pin_memory=False,
+        prefetch_factor=2,
         persistent_workers=True
     )
 
@@ -73,6 +76,4 @@ if __name__ == "__main__":
     ).to(device)
 
     print("start training...")
-    train_model(model, train_loader, val_loader, device, epochs=10, patience=3)
-
-    evaluate_model(model, test_loader, device, prefix="Test")
+    train_model(model, train_loader, val_loader, test_loader, device, epochs=10, patience=3)

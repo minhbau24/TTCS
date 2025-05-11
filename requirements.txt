@@ -1,1 +1,1 @@
-pandas numpy scikit-learn torch tqdm fastapi uvicorn
+pandas numpy scikit-learn torch tqdm fastapi uvicorn tabulate
