@@ -6,14 +6,14 @@ const limit = 12;
 const selectedProducts = [];
 
 async function fetchCategories(category) {
-    let categoryTree = [];
+    let categoryTree = null;
     const storedCategories = localStorage.getItem(`categories_${category}`);
     if (storedCategories) {
         try {
             categoryTree = JSON.parse(storedCategories);
-            if (!Array.isArray(categoryTree)) {
-                console.error('Stored categories is not an array:', categoryTree);
-                categoryTree = [];
+            if (typeof categoryTree !== 'object' || categoryTree === null) {
+                console.error('Stored categories is not an object:', categoryTree);
+                categoryTree = null;
             }
         } catch (error) {
             console.error('Error parsing stored categories:', error);
@@ -21,24 +21,26 @@ async function fetchCategories(category) {
         }
     }
 
-    if (!categoryTree.length) {
+    if (!categoryTree) {
         try {
             const response = await fetch(`http://127.0.0.1:8000/categories?category=${encodeURIComponent(category)}`);
             if (!response.ok) throw new Error('Network response was not ok');
             categoryTree = await response.json();
-            if (!Array.isArray(categoryTree)) {
-                console.error('API response is not an array:', categoryTree);
-                categoryTree = [];
+            console.log('Fetched categories:', categoryTree);
+            if (typeof categoryTree !== 'object' || categoryTree === null) {
+                console.error('API response is not an object:', categoryTree);
+                categoryTree = null;
             }
             localStorage.setItem(`categories_${category}`, JSON.stringify(categoryTree));
         } catch (error) {
             console.error('Error fetching categories:', error);
-            return [];
+            return null;
         }
     }
 
     return categoryTree;
 }
+
 
 function formatCategoryName(name) {
     if (typeof name !== 'string') return 'Danh mục không xác định';
@@ -255,43 +257,28 @@ function displayCategories(categories) {
     }
 
     level1Categories.forEach((category, index) => {
-        if (!category || typeof category.name !== 'string') {
-            console.warn('Invalid category object:', category);
+        const categoryName = typeof category === 'string' ? category : category.name;
+        if (!categoryName) {
+            console.warn('Invalid category name:', category);
             return;
         }
 
-        const collapseId = `collapse-${index}`;
-        const formattedName = formatCategoryName(category.name);
+        const formattedName = formatCategoryName(categoryName);
 
-        const card = document.createElement('div');
-        card.className = 'accordion-item mb-2';
-        card.innerHTML = `
-            <h2 class="accordion-header" id="heading-${index}">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#${collapseId}" aria-expanded="false" aria-controls="${collapseId}">
-                    ${formattedName}
-                </button>
-            </h2>
-            <div id="${collapseId}" class="accordion-collapse collapse" aria-labelledby="heading-${index}" data-bs-parent="#category-list">
-                <div class="accordion-body">
-                    <ul class="list-group list-group-flush">
-                        ${(Array.isArray(category.children) ? category.children : []).map((child, childIndex) => {
-                            if (typeof child !== 'string') return '';
-                            const formattedChildName = formatCategoryName(child);
-                            return `
-                                <li class="list-group-item">
-                                    <a href="#" class="text-decoration-none category-link" data-category="${child}">
-                                        ${formattedChildName}
-                                    </a>
-                                </li>
-                            `;
-                        }).join('')}
-                    </ul>
-                </div>
-            </div>
-        `;
-        categoryList.appendChild(card);
+        const listItem = document.createElement('div');
+        listItem.className = 'mb-2';
+
+        const link = document.createElement('a');
+        link.href = '#';
+        link.textContent = formattedName;
+        link.className = 'btn btn-outline-primary w-100 text-start category-link';
+        link.setAttribute('data-category', categoryName);
+
+        listItem.appendChild(link);
+        categoryList.appendChild(listItem);
     });
 
+    // Gắn sự kiện click cho các link danh mục
     document.querySelectorAll('.category-link').forEach(link => {
         link.addEventListener('click', (event) => {
             event.preventDefault();
@@ -300,6 +287,7 @@ function displayCategories(categories) {
         });
     });
 }
+
 
 document.addEventListener('DOMContentLoaded', async function() {
     document.getElementById("submit-button").addEventListener("click", () => {

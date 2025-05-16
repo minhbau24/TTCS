@@ -222,7 +222,7 @@ def get_recommendations(new_user_products, k=10):
     top_k_product_ids = [top_product_ids[i] for i in top_k_indices]
     print(f"[INFO] Top-k recommended product IDs: {top_k_product_ids}")
     
-    return load_products(df[df['id'].isin(top_k_product_ids)])
+    return load_products(df[df['id'].isin(top_k_product_ids)].drop_duplicates(subset=['id']))
 
 
 # Endpoint để lấy sản phẩm phân trang
@@ -248,20 +248,19 @@ async def get_products(limit: int = 10, page: int = 0, category: str = "sach"):
 # Endpoint để lấy danh mục
 @app.get("/categories")
 async def get_categories(category: str = "sach"):
+    # Lấy dữ liệu từ biến categories đã lưu
     if category not in categories:
         return {"error": "Category not found"}
 
     res = categories[category].copy()
-    expanded_children = []
-    for child in res["children"]:
-        child_name = child if isinstance(child, str) else child.get("name")
-        if child_name in categories:
-            child_obj = categories[child_name].copy()
-            child_obj["name"] = child_name
-            expanded_children.append(child_obj)
 
-    res["children"] = expanded_children
-    return res["children"]
+    return {
+        "name": category,
+        "children": [
+            {"name": child["name"], "lv": child["lv"]} if isinstance(child, dict) else {"name": child}
+            for child in res.get("children", [])
+        ]
+    }
 
 # Endpoint để xử lý tương tác dương và trả gợi ý
 @app.post("/submit-selection")
