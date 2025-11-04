@@ -14,7 +14,7 @@ def category_path_to_dataframe(path, max_level=5, pad_token='<PAD>'):
 
 def read_data(file_name, cols=[], category=False):
     data = []
-    for root, dirs, files in os.walk("nha-sach-tiki"):
+    for root, dirs, files in os.walk("data"):
         for file in files:
             if file == file_name:
                 file_path = os.path.join(root, file)
@@ -50,7 +50,7 @@ def leave_one_out_split(interactions):
     train_df = pd.concat(train_data)
     val_df = pd.DataFrame(val_data)
     test_df = pd.DataFrame(test_data)
-
+    
     return train_df.copy(), val_df.copy(), test_df.copy()
 
 def generate_negative_samples(pos_df, all_products, num_negatives=4, seed=42):
@@ -105,8 +105,8 @@ def generate_ranking_eval_set(pos_df, all_products, num_negatives=99, seed=42):
     return pd.DataFrame(eval_samples)
 
 # Đọc dữ liệu từ reviews.csv (có cột rating) và buy_historys.csv
-reviews = read_data("data/reviews.csv", ["customer_id", "product_id", "rating"])
-buy_history = read_data("data/buy_historys.csv", ["customer_id", "product_id", "seller_id"])
+reviews = read_data("reviews.csv", ["customer_id", "product_id", "rating"])
+buy_history = read_data("buy_historys.csv", ["customer_id", "product_id", "seller_id"])
 
 # Chuyển đổi kiểu dữ liệu customer_id
 reviews['customer_id'] = reviews['customer_id'].astype('Int64')
